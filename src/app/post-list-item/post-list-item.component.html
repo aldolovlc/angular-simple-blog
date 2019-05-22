@@ -1,0 +1,12 @@
+<li [ngClass]="{'list-group-item': true,
+                           'list-group-item-success': loveIts > 0,
+                           'list-group-item-danger': loveIts <= 0}">
+  <h4>{{ title }} <small class="text-secondary">{{ created_at | date: 'shortDate' }}</small></h4>
+  <p>{{ content }}</p>
+  <button type="button" class="btn btn-success mr-1" (click)="upvote()">Upvote</button>
+  <button type="button" class="btn btn-danger mr-1" (click)="downvote()">Downvote</button>
+  &#x2665; <span [ngClass]="{'p-1': true,
+                                                    'rounded': true,
+                                                    'bg-success': loveIts > 0,
+                                                    'bg-danger': loveIts <= 0}">{{loveIts}}</span>
+</li>
